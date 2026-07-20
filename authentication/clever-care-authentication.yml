@@ -1,0 +1,50 @@
+generated: '2026-07-18'
+method: searched
+source: openapi securityDefinitions + published SMART configuration
+docs: https://clevercarehealthplan.com/fhir-api-developer-resources/
+smart_configuration: well-known/clever-care-smart-configuration.json
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorization_code, client_credentials]
+  standard: SMART App Launch (SMART on FHIR)
+  gateway: WSO2 API Manager
+note: >-
+  Clever Care's HL7 FHIR R4 APIs are split into two access tiers. Secured
+  Patient Access resources (Patient, ExplanationOfBenefit, Coverage) require
+  SMART on FHIR OAuth 2.0 / OpenID Connect authorization. Public,
+  rate-limited Provider Directory and Drug Formulary resources are read
+  without member authorization but require a registered developer
+  application (client credentials) obtained from the developer portal.
+schemes:
+- name: SMART on FHIR
+  type: oauth2
+  applies_to: [Patient, ExplanationOfBenefit, Coverage]
+  flows:
+  - flow: authorization_code
+    authorizationUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/authorize
+    tokenUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/token
+    pkce: S256
+  - flow: client_credentials
+    tokenUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/token
+  jwksUri: https://fhir-portal.clevercarehealthplan.com/oauth2/jwks
+  revocationUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/revoke
+  scopes_ref: scopes/clever-care-scopes.yml
+- name: OpenID Connect
+  type: openIdConnect
+  discovery: https://fhir.clevercarehealthplan.com/r4/.well-known/smart-configuration
+  applies_to: [Patient, ExplanationOfBenefit, Coverage]
+- name: Developer application (public resources)
+  type: oauth2
+  applies_to:
+  - Organization
+  - OrganizationAffiliation
+  - Practitioner
+  - PractitionerRole
+  - Endpoint
+  - HealthcareService
+  - InsurancePlan
+  - Location
+  - MedicationKnowledge
+  - List
+  registration: https://fhir-portal.clevercarehealthplan.com/devportal
+  note: Public Provider Directory + Drug Formulary resources; rate-limited, require a registered app key.
