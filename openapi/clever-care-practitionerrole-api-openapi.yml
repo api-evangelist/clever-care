@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  description: HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]
+  version: 1.0.0
+  title: Coverage PractitionerRole API
+host: fhir.clevercarehealthplan.com
+basePath: /r4/Coverage/1.0.0
+schemes:
+- https
+security:
+- default: []
+tags:
+- name: PractitionerRole
+paths:
+  /:
+    get:
+      tags:
+      - PractitionerRole
+      summary: Search for PractitionerRole resources
+      operationId: searchPractitionerRole
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: specialty
+        in: query
+        description: The practitioner has this specialty at an organization (Select PractitionerRoles associated with the specified specialty)
+        required: false
+        type: string
+      - name: role
+        in: query
+        description: The practitioner can perform this role at for the organization (Select PractitionerRoles with the specified role)
+        required: false
+        type: string
+      - name: location
+        in: query
+        description: One of the locations at which this practitioner provides care (Select PractitionerRoles available at the specified location)
+        required: false
+        type: string
+      - name: organization
+        in: query
+        description: The identity of the organization the practitioner represents / acts on behalf of (Select PractitionerRoles available at the specified organization)
+        required: false
+        type: string
+      - name: endpoint
+        in: query
+        description: Technical endpoints providing access to services operated for the practitioner with this role (Select PractitionerRoles with the specified endpoint)
+        required: false
+        type: string
+      - name: service
+        in: query
+        description: The healthcare service that this worker provides for this role's Organization/Location(s) (Select PractitionerRoles providing the specified service)
+        required: false
+        type: string
+      - name: practitioner
+        in: query
+        description: Practitioner that is able to provide the defined services for the organization (Select roles filled by the specified practitioner)
+        required: false
+        type: string
+      - name: network
+        in: query
+        description: Select roles where the practitioner is a member of the specified health insurance provider network
+        required: false
+        type: string
+      - name: _offset
+        in: query
+        description: 'Pagination offset (Default: 0)'
+        required: false
+        type: string
+      - name: _count
+        in: query
+        description: 'Resource count (total) per bundle (Default: 10)'
+        required: false
+        type: string
+      - name: _profile
+        in: query
+        description: Select resources based on a given HL7 profile.
+        required: false
+        type: string
+      - name: _id
+        in: query
+        description: Select resource based on the logical `id`.
+        required: false
+        type: string
+      - name: _lastUpdated
+        in: query
+        description: 'Select resources based on the last time they were changed.
+
+
+          - Only date is supported in `yyyy-mm-dd` format.
+
+          - Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.
+
+
+          eg: `_lastUpdated=eq2021-01-14`
+
+          '
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Search operation is successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-throttling-tier: 300PerMin
+      x-auth-type: None
+  /{id}:
+    get:
+      tags:
+      - PractitionerRole
+      summary: Read a PractitionerRole resource
+      operationId: readPractitionerRole
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: id
+        in: path
+        description: Fetch a resource using its logical `id`.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Read operation successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '404':
+          description: Requested resource not found - invalid `ID`
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-throttling-tier: 500PerMin
+      x-auth-type: None
+securityDefinitions:
+  default:
+    type: oauth2
+    authorizationUrl: https://fhir.clevercarehealthplan.com/authorize
+    flow: implicit
+    scopes: {}
+x-wso2-oh-fhir-profile:
+- http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage
+x-wso2-oh-fhir-resourceType: Coverage

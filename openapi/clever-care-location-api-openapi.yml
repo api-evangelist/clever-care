@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  description: HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]
+  version: 1.0.0
+  title: Coverage Location API
+host: fhir.clevercarehealthplan.com
+basePath: /r4/Coverage/1.0.0
+schemes:
+- https
+security:
+- default: []
+tags:
+- name: Location
+paths:
+  /:
+    get:
+      tags:
+      - Location
+      summary: Search for Location resources
+      operationId: searchLocation
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: address-postalcode
+        in: query
+        description: A postal code specified in an address (Select Locations with the specified address postal code)
+        required: false
+        type: string
+      - name: address-state
+        in: query
+        description: A state specified in an address (Select Locations with the specified address.state)
+        required: false
+        type: string
+      - name: address-city
+        in: query
+        description: A city specified in an address (Select Locations with the specified address.city)
+        required: false
+        type: string
+      - name: address
+        in: query
+        description: A (part of the) address of the location (Select Locations with the specified address)
+        required: false
+        type: string
+      - name: type
+        in: query
+        description: A code for the type of location (Select Locations of the specified type)
+        required: false
+        type: string
+      - name: partof
+        in: query
+        description: A location of which this location is a part (Select Locations that are part of the specified location)
+        required: false
+        type: string
+      - name: organization
+        in: query
+        description: Searches for locations that are managed by the provided organization (Select Locations managed by the specified organization)
+        required: false
+        type: string
+      - name: endpoint
+        in: query
+        description: Technical endpoints providing access to services operated for the location (Select Locations with the specified endpoint)
+        required: false
+        type: string
+      - name: _offset
+        in: query
+        description: 'Pagination offset (Default: 0)'
+        required: false
+        type: string
+      - name: _count
+        in: query
+        description: 'Resource count (total) per bundle (Default: 10)'
+        required: false
+        type: string
+      - name: _profile
+        in: query
+        description: Select resources based on a given HL7 profile.
+        required: false
+        type: string
+      - name: _id
+        in: query
+        description: Select resource based on the logical `id`.
+        required: false
+        type: string
+      - name: _lastUpdated
+        in: query
+        description: 'Select resources based on the last time they were changed.
+
+
+          - Only date is supported in `yyyy-mm-dd` format.
+
+          - Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.
+
+
+          eg: `_lastUpdated=eq2021-01-14`
+
+          '
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Search operation is successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-throttling-tier: 300PerMin
+      x-auth-type: None
+  /{id}:
+    get:
+      tags:
+      - Location
+      summary: Read a Location resource
+      operationId: readLocation
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: id
+        in: path
+        description: Fetch a resource using its logical `id`.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Read operation successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '404':
+          description: Requested resource not found - invalid `ID`
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-throttling-tier: 500PerMin
+      x-auth-type: None
+securityDefinitions:
+  default:
+    type: oauth2
+    authorizationUrl: https://fhir.clevercarehealthplan.com/authorize
+    flow: implicit
+    scopes: {}
+x-wso2-oh-fhir-profile:
+- http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage
+x-wso2-oh-fhir-resourceType: Coverage

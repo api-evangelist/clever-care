@@ -1,0 +1,139 @@
+swagger: '2.0'
+info:
+  description: HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]
+  version: 1.0.0
+  title: Coverage ExplanationOfBenefit API
+host: fhir.clevercarehealthplan.com
+basePath: /r4/Coverage/1.0.0
+schemes:
+- https
+security:
+- default: []
+tags:
+- name: ExplanationOfBenefit
+paths:
+  /:
+    get:
+      tags:
+      - ExplanationOfBenefit
+      summary: Search for ExplanationOfBenefit resources
+      operationId: searchExplanationOfBenefit
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: identifier
+        in: query
+        description: The business identifier of the Explanation of Benefit
+        required: false
+        type: string
+      - name: patient
+        in: query
+        description: The reference to the patient
+        required: true
+        type: string
+      - name: type
+        in: query
+        description: 'The type of the ExplanationOfBenefit.
+
+          The `type` parameter will be ignored if `_profile` query parameter present in the query.
+
+          '
+        required: false
+        type: string
+      - name: service-date
+        in: query
+        description: 'Date of the service for the EOB. The `service-date` search parameter
+
+          simplifies search, since a client doesn''t need to know that for inpatient
+
+          and outpatient institutional EOB dates they need to search by `billablePeriod.period.start`,
+
+          for a pharmacy EOB by `item.servicedDate`, and for a professional and non-clinician
+
+          EOB - by `item.servicedPeriod.period.start`.
+
+          '
+        required: false
+        type: string
+      - name: _profile
+        in: query
+        description: Select resources based on a given HL7 profile.
+        required: false
+        type: string
+      - name: _id
+        in: query
+        description: Select resource based on the logical `id`.
+        required: false
+        type: string
+      - name: _lastUpdated
+        in: query
+        description: 'Select resources based on the last time they were changed.
+
+
+          - Only date is supported in `yyyy-mm-dd` format.
+
+          - Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.
+
+
+          eg: `_lastUpdated=eq2021-01-14`
+
+          '
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Search operation is successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-auth-type: Application & Application User
+  /{id}:
+    get:
+      tags:
+      - ExplanationOfBenefit
+      summary: Read an ExplanationOfBenefit resource
+      operationId: readExplanationOfBenefit
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: id
+        in: path
+        description: Fetch a resource using its logical `id`.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Read operation successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '404':
+          description: Requested resource not found - invalid `ID`
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-auth-type: Application & Application User
+securityDefinitions:
+  default:
+    type: oauth2
+    authorizationUrl: https://fhir.clevercarehealthplan.com/authorize
+    flow: implicit
+    scopes: {}
+x-wso2-oh-fhir-profile:
+- http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage
+x-wso2-oh-fhir-resourceType: Coverage

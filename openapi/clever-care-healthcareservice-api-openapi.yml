@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  description: HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]
+  version: 1.0.0
+  title: Coverage HealthcareService API
+host: fhir.clevercarehealthplan.com
+basePath: /r4/Coverage/1.0.0
+schemes:
+- https
+security:
+- default: []
+tags:
+- name: HealthcareService
+paths:
+  /:
+    get:
+      tags:
+      - HealthcareService
+      summary: Search for HealthcareService resources
+      operationId: searchHealthcareService
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: name
+        in: query
+        description: Select HealthcareServices with the specified name
+        required: false
+        type: string
+      - name: service-category
+        in: query
+        description: Select HealthcareServices providing the specified category of services
+        required: false
+        type: string
+      - name: service-type
+        in: query
+        description: Select HealthcareServices of the specified type (The type of service provided by this healthcare service)
+        required: false
+        type: string
+      - name: specialty
+        in: query
+        description: Select services associated with the specified specialty (The specialty of the service provided by this healthcare service)
+        required: false
+        type: string
+      - name: organization
+        in: query
+        description: Select HealthcareServices provided by the specified organization (The organization that provides this Healthcare Service)
+        required: false
+        type: string
+      - name: location
+        in: query
+        description: Select HealthcareServices available at the specified location (The location of the Healthcare Service)
+        required: false
+        type: string
+      - name: endpoint
+        in: query
+        description: Select HealthcareServices with the specified endpoint (Technical endpoints providing access to electronic services operated for the healthcare service)
+        required: false
+        type: string
+      - name: coverage-area
+        in: query
+        description: Select services available in a region described by the specified location. (Location(s) service is intended for/available to)
+        required: false
+        type: string
+      - name: _offset
+        in: query
+        description: 'Pagination offset (Default: 0)'
+        required: false
+        type: string
+      - name: _count
+        in: query
+        description: 'Resource count (total) per bundle (Default: 10)'
+        required: false
+        type: string
+      - name: _profile
+        in: query
+        description: Select resources based on a given HL7 profile.
+        required: false
+        type: string
+      - name: _id
+        in: query
+        description: Select resource based on the logical `id`.
+        required: false
+        type: string
+      - name: _lastUpdated
+        in: query
+        description: 'Select resources based on the last time they were changed.
+
+
+          - Only date is supported in `yyyy-mm-dd` format.
+
+          - Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.
+
+
+          eg: `_lastUpdated=eq2021-01-14`
+
+          '
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Search operation is successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-throttling-tier: 300PerMin
+      x-auth-type: None
+  /{id}:
+    get:
+      tags:
+      - HealthcareService
+      summary: Read a HealthcareService resource
+      operationId: readHealthcareService
+      produces:
+      - application/fhir+json
+      parameters:
+      - name: id
+        in: path
+        description: Fetch a resource using its logical `id`.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Read operation successful
+        '400':
+          description: Invalid parameter
+        '401':
+          description: Unauthorized request
+        '403':
+          description: Access forbidden - `ID` mismatch
+        '404':
+          description: Requested resource not found - invalid `ID`
+        '500':
+          description: Internal server error - please contact the API provider
+        '503':
+          description: Service unavailable - please contact the API provider
+      security:
+      - default: []
+      x-throttling-tier: 500PerMin
+      x-auth-type: None
+securityDefinitions:
+  default:
+    type: oauth2
+    authorizationUrl: https://fhir.clevercarehealthplan.com/authorize
+    flow: implicit
+    scopes: {}
+x-wso2-oh-fhir-profile:
+- http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage
+x-wso2-oh-fhir-resourceType: Coverage
