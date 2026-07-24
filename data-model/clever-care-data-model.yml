@@ -1,0 +1,116 @@
+generated: '2026-07-18'
+method: derived
+source: openapi (13 FHIR resource APIs) + FHIR R4 / CARIN BB / Da Vinci PDex Plan-Net reference fields
+note: >-
+  Entity graph derived from FHIR reference elements across the published
+  resources. Ids are FHIR logical ids (no vendor prefix). Three domains:
+  Patient Access (CARIN BB), Provider Directory (PDex Plan-Net), Drug Formulary.
+entities:
+- name: Patient
+  domain: patient-access
+  profile: C4BB-Patient
+- name: Coverage
+  domain: patient-access
+  profile: C4BB-Coverage
+- name: ExplanationOfBenefit
+  domain: patient-access
+  profile: C4BB-ExplanationOfBenefit
+- name: Organization
+  domain: provider-directory
+  profile: plannet-Organization / plannet-Network / C4BB-Organization
+- name: OrganizationAffiliation
+  domain: provider-directory
+  profile: plannet-OrganizationAffiliation
+- name: Practitioner
+  domain: provider-directory
+  profile: plannet-Practitioner
+- name: PractitionerRole
+  domain: provider-directory
+  profile: plannet-PractitionerRole
+- name: HealthcareService
+  domain: provider-directory
+  profile: plannet-HealthcareService
+- name: Location
+  domain: provider-directory
+  profile: plannet-Location
+- name: InsurancePlan
+  domain: provider-directory
+  profile: plannet-InsurancePlan
+- name: Endpoint
+  domain: provider-directory
+  profile: plannet-Endpoint
+- name: MedicationKnowledge
+  domain: drug-formulary
+  profile: usdf-FormularyDrug
+- name: List
+  domain: drug-formulary
+  profile: usdf-CoveragePlan
+relationships:
+- from: Coverage
+  to: Patient
+  type: belongs_to
+  via: beneficiary
+- from: Coverage
+  to: Organization
+  type: belongs_to
+  via: payor
+- from: ExplanationOfBenefit
+  to: Patient
+  type: belongs_to
+  via: patient
+- from: ExplanationOfBenefit
+  to: Coverage
+  type: belongs_to
+  via: insurance.coverage
+- from: ExplanationOfBenefit
+  to: Organization
+  type: belongs_to
+  via: insurer
+- from: OrganizationAffiliation
+  to: Organization
+  type: belongs_to
+  via: participatingOrganization
+- from: OrganizationAffiliation
+  to: Organization
+  type: has_many
+  via: network
+- from: PractitionerRole
+  to: Practitioner
+  type: belongs_to
+  via: practitioner
+- from: PractitionerRole
+  to: Organization
+  type: belongs_to
+  via: organization
+- from: PractitionerRole
+  to: Location
+  type: has_many
+  via: location
+- from: PractitionerRole
+  to: HealthcareService
+  type: has_many
+  via: healthcareService
+- from: HealthcareService
+  to: Organization
+  type: belongs_to
+  via: providedBy
+- from: HealthcareService
+  to: Location
+  type: has_many
+  via: location
+- from: Location
+  to: Organization
+  type: belongs_to
+  via: managingOrganization
+- from: InsurancePlan
+  to: Organization
+  type: belongs_to
+  via: ownedBy
+- from: Endpoint
+  to: Organization
+  type: belongs_to
+  via: managingOrganization
+- from: List
+  to: MedicationKnowledge
+  type: has_many
+  via: entry.item

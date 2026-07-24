@@ -1,8 +1,14 @@
 aid: clever-care
 name: Clever Care
-description: 'Clever Care is a company surfaced as a portfolio company of gv and added to the API Evangelist
-  network as a stub for enrichment. Sector: life-sciences. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: 'Clever Care Health Plan is a California Medicare Advantage (HMO and HMO C-SNP) plan headquartered
+  in Huntington Beach, CA, that blends the healing therapies of Eastern medicine with the innovative practices
+  of Western medicine to serve Los Angeles, Orange, San Diego, Riverside, and San Bernardino counties.
+  In compliance with the CMS Interoperability and Patient Access rule (CMS-9115-F), Clever Care operates
+  a secure, standards-based HL7 FHIR R4 API surface (WSO2 gateway) spanning 13 published resource APIs
+  across three domains: Patient Access (CARIN Blue Button), Provider Directory (Da Vinci PDex Plan-Net),
+  and Drug Formulary (Da Vinci US Drug Formulary). Patient Access resources are secured with SMART on
+  FHIR OAuth 2.0 / OpenID Connect; directory and formulary resources are public and rate-limited. Provider
+  Access, Payer-to-Payer, and Prior Authorization APIs are planned for January 1, 2027.'
 url: https://raw.githubusercontent.com/api-evangelist/clever-care/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +16,503 @@ x-backed-by:
 - gv
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://fhir-portal.clevercarehealthplan.com/api-docs/images/cc_logo_H.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Life Sciences
-apis: []
+- Health Insurance
+- Medicare Advantage
+- Healthcare
+- FHIR
+- Healthcare Interoperability
+- Patient Access
+- Provider Directory
+- CMS-9115-F
+apis:
+- aid: clever-care:clever-care-coverage-api
+  name: Clever Care Coverage API
+  description: The Coverage API from Clever Care — 2 operation(s) for coverage.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - Coverage
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-coverage-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-endpoint-api
+  name: Clever Care Endpoint API
+  description: The Endpoint API from Clever Care — 2 operation(s) for endpoint.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - Endpoint
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-endpoint-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-explanationofbenefit-api
+  name: Clever Care ExplanationOfBenefit API
+  description: The ExplanationOfBenefit API from Clever Care — 2 operation(s) for explanationofbenefit.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - ExplanationOfBenefit
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-explanationofbenefit-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-healthcareservice-api
+  name: Clever Care HealthcareService API
+  description: The HealthcareService API from Clever Care — 2 operation(s) for healthcareservice.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - HealthcareService
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-healthcareservice-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-insuranceplan-api
+  name: Clever Care InsurancePlan API
+  description: The InsurancePlan API from Clever Care — 2 operation(s) for insuranceplan.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - InsurancePlan
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-insuranceplan-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-list-api
+  name: Clever Care List API
+  description: The List API from Clever Care — 2 operation(s) for list.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - List
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-list-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-location-api
+  name: Clever Care Location API
+  description: The Location API from Clever Care — 2 operation(s) for location.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - Location
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-location-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-medicationknowledge-api
+  name: Clever Care MedicationKnowledge API
+  description: The MedicationKnowledge API from Clever Care — 2 operation(s) for medicationknowledge.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - MedicationKnowledge
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-medicationknowledge-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-organization-api
+  name: Clever Care Organization API
+  description: The Organization API from Clever Care — 2 operation(s) for organization.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-organization-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-organizationaffiliation-api
+  name: Clever Care OrganizationAffiliation API
+  description: >-
+    The OrganizationAffiliation API from Clever Care — 2 operation(s) for organizationaffiliation.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - OrganizationAffiliation
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-organizationaffiliation-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-patient-api
+  name: Clever Care Patient API
+  description: The Patient API from Clever Care — 2 operation(s) for patient.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - Patient
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-patient-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-practitioner-api
+  name: Clever Care Practitioner API
+  description: The Practitioner API from Clever Care — 2 operation(s) for practitioner.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - Practitioner
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-practitioner-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
+- aid: clever-care:clever-care-practitionerrole-api
+  name: Clever Care PractitionerRole API
+  description: The PractitionerRole API from Clever Care — 2 operation(s) for practitionerrole.
+  humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
+  tags:
+  - PractitionerRole
+  properties:
+  - type: OpenAPI
+    url: openapi/clever-care-practitionerrole-api-openapi.yml
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Endpoint.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/ExplanationOfBenefit.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/HealthcareService.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/InsurancePlan.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/List.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Location.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/MedicationKnowledge.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Organization.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/OrganizationAffiliation.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Patient.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/Practitioner.html
+  - type: APIReference
+    url: https://fhir-portal.clevercarehealthplan.com/api-docs/PractitionerRole.html
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +521,54 @@ maintainers:
 common:
 - type: Website
   url: https://clevercarehealthplan.com
+- type: DeveloperPortal
+  url: https://fhir-portal.clevercarehealthplan.com/devportal
+- type: Documentation
+  url: https://clevercarehealthplan.com/fhir-api-developer-resources/
+- type: APIReference
+  url: https://fhir-portal.clevercarehealthplan.com/api-docs/
+- type: GettingStarted
+  url: https://clevercarehealthplan.com/fhir-api-developer-resources/
+- type: SignUp
+  url: https://fhir-portal.clevercarehealthplan.com/devportal
+- type: Roadmap
+  url: https://clevercarehealthplan.com/interoperability-and-patient-access/
+- type: TermsOfService
+  url: https://clevercarehealthplan.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://clevercarehealthplan.com/privacy-practices/
+- type: Authentication
+  url: authentication/clever-care-authentication.yml
+- type: OAuthScopes
+  url: scopes/clever-care-scopes.yml
+- type: AgenticAccess
+  url: agentic-access/clever-care-agentic-access.yml
+- type: DomainSecurity
+  url: security/clever-care-domain-security.yml
+- type: Lifecycle
+  url: lifecycle/clever-care-lifecycle.yml
+- type: Conventions
+  url: conventions/clever-care-conventions.yml
+- type: ErrorCatalog
+  url: errors/clever-care-problem-types.yml
+- type: DataModel
+  url: data-model/clever-care-data-model.yml
+- type: MCPServer
+  url: mcp/clever-care-mcp.yml
+- type: LLMsTxt
+  url: llms/clever-care-llms.txt
+- type: Overlay
+  url: overlays/clever-care-fhir-overlay.yaml
+- type: WellKnown
+  url: well-known/clever-care-well-known.yml
+- type: Conformance
+  url: conformance/clever-care-conformance.yml
+- type: Compliance
+  url: https://clevercarehealthplan.com/interoperability-and-patient-access/
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

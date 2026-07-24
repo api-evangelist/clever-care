@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi (13 FHIR resource APIs)
+note: >-
+  No official Clever Care MCP server found. Candidate tool list derived from the
+  published FHIR R4 read/search operations. Secured tools (Patient, EOB, Coverage)
+  require a SMART on FHIR patient-context token; directory/formulary tools use a
+  registered developer app.
+server:
+  name: clever-care-fhir
+  transport: http
+tools:
+- name: search_patient
+  description: Search CARIN BB Patient resources (secured; patient context).
+  source_operation: openapi/clever-care-patient-openapi.json#get /
+- name: read_patient
+  description: Read a Patient by id (secured).
+  source_operation: openapi/clever-care-patient-openapi.json#get /{id}
+- name: search_explanation_of_benefit
+  description: Search CARIN BB ExplanationOfBenefit (claims/encounters) for the member.
+  source_operation: openapi/clever-care-explanation-of-benefit-openapi.json#get /
+- name: search_coverage
+  description: Search CARIN BB Coverage resources for the member.
+  source_operation: openapi/clever-care-coverage-openapi.json#get /
+- name: search_organization
+  description: Search PDex Plan-Net Organization / Network (public directory).
+  source_operation: openapi/clever-care-organization-openapi.json#get /
+- name: search_practitioner
+  description: Search PDex Plan-Net Practitioner (public directory).
+  source_operation: openapi/clever-care-practitioner-openapi.json#get /
+- name: search_practitioner_role
+  description: Search PDex Plan-Net PractitionerRole (public directory).
+  source_operation: openapi/clever-care-practitioner-role-openapi.json#get /
+- name: search_location
+  description: Search PDex Plan-Net Location (public directory).
+  source_operation: openapi/clever-care-location-openapi.json#get /
+- name: search_healthcare_service
+  description: Search PDex Plan-Net HealthcareService (public directory).
+  source_operation: openapi/clever-care-healthcare-service-openapi.json#get /
+- name: search_insurance_plan
+  description: Search PDex Plan-Net InsurancePlan (public directory).
+  source_operation: openapi/clever-care-insurance-plan-openapi.json#get /
+- name: search_medication_knowledge
+  description: Search Da Vinci US Drug Formulary MedicationKnowledge (public formulary).
+  source_operation: openapi/clever-care-medication-knowledge-openapi.json#get /
+- name: search_list
+  description: Search Drug Formulary List / CoveragePlan (public formulary).
+  source_operation: openapi/clever-care-list-openapi.json#get /

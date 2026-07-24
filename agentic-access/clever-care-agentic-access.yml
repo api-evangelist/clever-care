@@ -1,0 +1,279 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/clever-care-coverage-openapi.json, openapi/clever-care-endpoint-openapi.json,
+  openapi/clever-care-explanation-of-benefit-openapi.json, openapi/clever-care-healthcare-service-openapi.json,
+  openapi/clever-care-insurance-plan-openapi.json, openapi/clever-care-list-openapi.json, openapi/clever-care-location-openapi.json,
+  openapi/clever-care-medication-knowledge-openapi.json, openapi/clever-care-organization-affiliation-openapi.json,
+  openapi/clever-care-organization-openapi.json, openapi/clever-care-patient-openapi.json, openapi/clever-care-practitioner-openapi.json,
+  openapi/clever-care-practitioner-role-openapi.json
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 26
+  by_action_class:
+    connected: 26
+  by_consequence:
+    read: 26
+  human_in_the_loop_required: 0
+operations:
+- path: /
+  method: get
+  operationId: searchCoverage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readCoverage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchEndpoint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readEndpoint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchExplanationOfBenefit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readExplanationOfBenefit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchHealthcareService
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readHealthcareService
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchInsurancePlan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readInsurancePlan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchMedicationKnowledge
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readMedicationKnowledge
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchOrganizationAffiliation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readOrganizationAffiliation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchOrganization
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readOrganization
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchPatient
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readPatient
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchPractitioner
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readPractitioner
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /
+  method: get
+  operationId: searchPractitionerRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{id}
+  method: get
+  operationId: readPractitionerRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

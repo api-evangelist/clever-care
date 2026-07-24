@@ -1,0 +1,247 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "HL7 FHIR API for OrganizationAffiliation resource. \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-OrganizationAffiliation]\n",
+    "version": "1.0.0",
+    "title": "OrganizationAffiliation"
+  },
+  "host": "fhir.clevercarehealthplan.com",
+  "basePath": "/r4/OrganizationAffiliation/1.0.0",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "default": []
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "OrganizationAffiliation"
+        ],
+        "summary": "Search for OrganizationAffiliation resources",
+        "operationId": "searchOrganizationAffiliation",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "role",
+            "in": "query",
+            "description": "Definition of the role the `participatingOrganization` plays (Select OrganizationAffiliations with the specified role)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "specialty",
+            "in": "query",
+            "description": "Specific specialty of the `participatingOrganization` in the context of the role (Select OrganizationAffiliations associated with the specified specialty)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "description": "The location(s) at which the role occurs (Select OrganizationAffiliations available at the specified location)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "network",
+            "in": "query",
+            "description": "Health insurance provider network in which the `participatingOrganization`\nprovides the role's services (if defined) at the indicated locations (if\ndefined) (Select roles where the organization is a member of the specified\nhealth insurance provider network)\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "participating-organization",
+            "in": "query",
+            "description": "The organization that provides services to the primary organization (Select roles filled by the specified organization)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "primary-organization",
+            "in": "query",
+            "description": "The organization that receives the services from the `participating organization` (Select roles offered by the specified organization)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "endpoint",
+            "in": "query",
+            "description": "Technical endpoints providing access to services operated for this role (Select OrganizationAffiliations with the specified endpoint)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "service",
+            "in": "query",
+            "description": "Healthcare services provided through the role (Select OrganizationAffiliations providing the specified service)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_offset",
+            "in": "query",
+            "description": "Pagination offset (Default: 0)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "description": "Resource count (total) per bundle (Default: 10)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_profile",
+            "in": "query",
+            "description": "Select resources based on a given HL7 profile.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "Select resource based on the logical `id`.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search operation is successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-throttling-tier": "300PerMin",
+        "x-auth-type": "None"
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "OrganizationAffiliation"
+        ],
+        "summary": "Read an OrganizationAffiliation resource",
+        "operationId": "readOrganizationAffiliation",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Fetch a resource using its logical `id`.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read operation successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "404": {
+            "description": "Requested resource not found - invalid `ID`"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-throttling-tier": "500PerMin",
+        "x-auth-type": "None"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "default": {
+      "type": "oauth2",
+      "authorizationUrl": "https://fhir.clevercarehealthplan.com/authorize",
+      "flow": "implicit",
+      "scopes": {}
+    }
+  },
+  "parameters": {
+    "_idParam": {
+      "name": "_id",
+      "in": "query",
+      "description": "Select resource based on the logical `id`.",
+      "required": false,
+      "type": "string"
+    },
+    "_lastUpdatedParam": {
+      "name": "_lastUpdated",
+      "in": "query",
+      "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+      "required": false,
+      "type": "string"
+    },
+    "_profileParam": {
+      "name": "_profile",
+      "in": "query",
+      "description": "Select resources based on a given HL7 profile.",
+      "required": false,
+      "type": "string"
+    },
+    "idParam": {
+      "name": "id",
+      "in": "path",
+      "description": "Fetch a resource using its logical `id`.",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "x-wso2-oh-fhir-resourceType": "OrganizationAffiliation",
+  "x-wso2-oh-fhir-profile": [
+    "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-OrganizationAffiliation"
+  ],
+  "x-wso2-disable-security": true
+}

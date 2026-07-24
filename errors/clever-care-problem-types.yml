@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: derived
+source: openapi 4xx/5xx responses across 13 FHIR resource APIs
+format: fhir-operationoutcome
+envelope: application/fhir+json OperationOutcome resource
+note: >-
+  Clever Care's FHIR R4 gateway returns errors as HL7 FHIR OperationOutcome
+  resources (not RFC 9457 problem+json). Every resource endpoint declares the
+  same HTTP status set; read-by-id additionally returns 404.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: Malformed FHIR search parameter or invalid request syntax.
+  remediation: Validate search parameters against the resource CapabilityStatement.
+  applies_to: [search, read]
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid OAuth 2.0 bearer token.
+  remediation: Obtain a token from the SMART token endpoint and send it in the Authorization header.
+  applies_to: [search, read]
+- status: 403
+  title: Forbidden
+  meaning: Token lacks the required SMART scope for the requested resource/patient.
+  remediation: Request the appropriate patient/*.cruds or user/*.cruds scope.
+  applies_to: [search, read]
+- status: 404
+  title: Not Found
+  meaning: The FHIR resource with the supplied logical id does not exist.
+  remediation: Verify the resource id; use search to locate the correct id.
+  applies_to: [read]
+- status: 500
+  title: Internal Server Error
+  meaning: Unexpected server-side error processing the FHIR request.
+  remediation: Retry with backoff; contact the plan if the error persists.
+  applies_to: [search, read]
+- status: 503
+  title: Service Unavailable
+  meaning: The FHIR gateway is temporarily unavailable or rate limits were exceeded.
+  remediation: Retry after a delay honoring rate-limit signaling.
+  applies_to: [search, read]

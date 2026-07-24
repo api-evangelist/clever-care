@@ -1,0 +1,214 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "HL7 FHIR API for Practitioner resource. \nSupported profiles - \n[http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner,\nhttp://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Practitioner]\n",
+    "version": "1.0.0",
+    "title": "Practitioner"
+  },
+  "host": "fhir.clevercarehealthplan.com",
+  "basePath": "/r4/Practitioner/1.0.0",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "default": []
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Practitioner"
+        ],
+        "summary": "Search for Practitioner resources",
+        "description": "Search for Practitioner resources. Since this API supports multiple HL7 profiles, if you do not provide a value for `_profile` a default value of `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner` will be used.",
+        "operationId": "searchPractitioner",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "A server defined search that may match any of the string fields\nin the `HumanName`, including `family`, `give`, `prefix`, `suffix`, and/or\n`text` (Select Practitioners with the specified name (matches against any\nof the elements in the HumanName data type)). \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner]\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "given",
+            "in": "query",
+            "description": "A portion of the given name (Select Practitioners with the specified given name). Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "family",
+            "in": "query",
+            "description": "A portion of the family name (Select Practitioners with the specified family name). Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner]",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_offset",
+            "in": "query",
+            "description": "Pagination offset (Default: 0)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "description": "Resource count (total) per bundle (Default: 10)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_profile",
+            "in": "query",
+            "description": "Select resources based on a given HL7 profile.\ndefault value: `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner`\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "Select resource based on the logical `id`.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search operation is successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-throttling-tier": "300PerMin",
+        "x-auth-type": "None"
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Practitioner"
+        ],
+        "summary": "Read a Practitioner resource",
+        "operationId": "readPractitioner",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Fetch a resource using its logical `id`.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read operation successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "404": {
+            "description": "Requested resource not found - invalid `ID`"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-throttling-tier": "500PerMin",
+        "x-auth-type": "None"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "default": {
+      "type": "oauth2",
+      "authorizationUrl": "https://fhir.clevercarehealthplan.com/authorize",
+      "flow": "implicit",
+      "scopes": {}
+    }
+  },
+  "parameters": {
+    "_idParam": {
+      "name": "_id",
+      "in": "query",
+      "description": "Select resource based on the logical `id`.",
+      "required": false,
+      "type": "string"
+    },
+    "_lastUpdatedParam": {
+      "name": "_lastUpdated",
+      "in": "query",
+      "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+      "required": false,
+      "type": "string"
+    },
+    "_profileParam": {
+      "name": "_profile",
+      "in": "query",
+      "description": "Select resources based on a given HL7 profile.\ndefault value: `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner`\n",
+      "required": false,
+      "type": "string"
+    },
+    "idParam": {
+      "name": "id",
+      "in": "path",
+      "description": "Fetch a resource using its logical `id`.",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "x-wso2-oh-fhir-profile": [
+    "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner",
+    "http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Practitioner"
+  ],
+  "x-wso2-oh-fhir-resourceType": "Practitioner",
+  "x-wso2-disable-security": true
+}

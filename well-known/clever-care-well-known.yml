@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+hosts:
+- host: https://fhir.clevercarehealthplan.com
+  documents:
+  - path: /r4/.well-known/smart-configuration   # SMART App Launch discovery
+    status: 200
+    file: clever-care-smart-configuration.json
+  - path: /.well-known/smart-configuration
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://fhir-portal.clevercarehealthplan.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 302   # redirects to WSO2 carbon admin login
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+- host: https://clevercarehealthplan.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404   # soft-404, redirects to site home
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  The only live discovery document is the SMART on FHIR configuration served
+  under the FHIR base path (/r4/.well-known/smart-configuration). The public
+  website and the WSO2 developer portal host do not publish security.txt,
+  api-catalog, or an unauthenticated OpenID configuration.

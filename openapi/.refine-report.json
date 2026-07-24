@@ -1,0 +1,38 @@
+{
+  "provider": "clever-care",
+  "sources": [
+    "clever-care-coverage-api-openapi.yml",
+    "clever-care-endpoint-api-openapi.yml",
+    "clever-care-explanationofbenefit-api-openapi.yml",
+    "clever-care-healthcareservice-api-openapi.yml",
+    "clever-care-insuranceplan-api-openapi.yml",
+    "clever-care-list-api-openapi.yml",
+    "clever-care-location-api-openapi.yml",
+    "clever-care-medicationknowledge-api-openapi.yml",
+    "clever-care-organization-api-openapi.yml",
+    "clever-care-organizationaffiliation-api-openapi.yml",
+    "clever-care-patient-api-openapi.yml",
+    "clever-care-practitioner-api-openapi.yml",
+    "clever-care-practitionerrole-api-openapi.yml"
+  ],
+  "outputs": [
+    "clever-care-coverage-api-openapi.yml",
+    "clever-care-endpoint-api-openapi.yml",
+    "clever-care-explanationofbenefit-api-openapi.yml",
+    "clever-care-healthcareservice-api-openapi.yml",
+    "clever-care-insuranceplan-api-openapi.yml",
+    "clever-care-list-api-openapi.yml",
+    "clever-care-location-api-openapi.yml",
+    "clever-care-medicationknowledge-api-openapi.yml",
+    "clever-care-organization-api-openapi.yml",
+    "clever-care-organizationaffiliation-api-openapi.yml",
+    "clever-care-patient-api-openapi.yml",
+    "clever-care-practitioner-api-openapi.yml",
+    "clever-care-practitionerrole-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

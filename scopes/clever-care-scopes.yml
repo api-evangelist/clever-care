@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: searched
+source: openapi securityDefinitions (13 FHIR resource APIs)
+docs: https://fhir.clevercarehealthplan.com/r4/.well-known/smart-configuration
+smart_configuration: well-known/clever-care-smart-configuration.json
+note: >-
+  Clever Care exposes SMART on FHIR (SMART App Launch) scopes for its secured
+  Patient Access resources (Patient, ExplanationOfBenefit, Coverage). The
+  OpenAPI securityDefinitions carry an empty scope map (WSO2 gateway default);
+  the authoritative scope list comes from the published SMART configuration
+  document at /r4/.well-known/smart-configuration.
+schemes:
+- name: SMART on FHIR (OAuth 2.0 / OpenID Connect)
+  authorizationUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/authorize
+  tokenUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/token
+  jwksUri: https://fhir-portal.clevercarehealthplan.com/oauth2/jwks
+  revocationUrl: https://fhir-portal.clevercarehealthplan.com/oauth2/revoke
+  grantTypes: [authorization_code, client_credentials]
+  pkce: S256
+  sources:
+  - openapi/clever-care-patient-openapi.json
+  - openapi/clever-care-explanation-of-benefit-openapi.json
+  - openapi/clever-care-coverage-openapi.json
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; returns an id_token identifying the member.
+  flows: [authorization_code]
+- scope: launch/patient
+  description: Standalone patient launch context; binds the access token to a single patient/member.
+  flows: [authorization_code]
+- scope: patient/*.cruds
+  description: >-
+    Patient-level access to all authorized FHIR resource types (CARIN BB Patient,
+    ExplanationOfBenefit, Coverage) for the launched patient. SMART v2 granular
+    scope; 'cruds' = create/read/update/delete/search (Clever Care exposes read+search).
+  flows: [authorization_code]
+- scope: user/*.cruds
+  description: >-
+    User-level access to all authorized FHIR resource types the authenticated user
+    is permitted to see. SMART v2 granular scope.
+  flows: [authorization_code]
+smart_capabilities:
+- launch-standalone
+- client-public
+- client-confidential-symmetric
+- context-standalone-patient
+- sso-openid-connect
+- permission-patient
+- permission-offline

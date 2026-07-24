@@ -1,0 +1,205 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "HL7 FHIR API for ExplanationOfBenefit resource. \nSupported profiles - \n[http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Inpatient-Institutional,\nhttp://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Outpatient-Institutional,\nhttp://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Pharmacy,\nhttp://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Professional-NonClinician]\n",
+    "version": "1.0.0",
+    "title": "ExplanationOfBenefit"
+  },
+  "host": "fhir.clevercarehealthplan.com",
+  "basePath": "/r4/ExplanationOfBenefit/1.0.0",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "default": []
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "ExplanationOfBenefit"
+        ],
+        "summary": "Search for ExplanationOfBenefit resources",
+        "operationId": "searchExplanationOfBenefit",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The business identifier of the Explanation of Benefit",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "patient",
+            "in": "query",
+            "description": "The reference to the patient",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "The type of the ExplanationOfBenefit.\nThe `type` parameter will be ignored if `_profile` query parameter present in the query.\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "service-date",
+            "in": "query",
+            "description": "Date of the service for the EOB. The `service-date` search parameter\nsimplifies search, since a client doesn't need to know that for inpatient\nand outpatient institutional EOB dates they need to search by `billablePeriod.period.start`,\nfor a pharmacy EOB by `item.servicedDate`, and for a professional and non-clinician\nEOB - by `item.servicedPeriod.period.start`.\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_profile",
+            "in": "query",
+            "description": "Select resources based on a given HL7 profile.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "Select resource based on the logical `id`.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search operation is successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-auth-type": "Application & Application User"
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "ExplanationOfBenefit"
+        ],
+        "summary": "Read an ExplanationOfBenefit resource",
+        "operationId": "readExplanationOfBenefit",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Fetch a resource using its logical `id`.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read operation successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "404": {
+            "description": "Requested resource not found - invalid `ID`"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-auth-type": "Application & Application User"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "default": {
+      "type": "oauth2",
+      "authorizationUrl": "https://fhir.clevercarehealthplan.com/authorize",
+      "flow": "implicit",
+      "scopes": {}
+    }
+  },
+  "parameters": {
+    "_idParam": {
+      "name": "_id",
+      "in": "query",
+      "description": "Select resource based on the logical `id`.",
+      "required": false,
+      "type": "string"
+    },
+    "_lastUpdatedParam": {
+      "name": "_lastUpdated",
+      "in": "query",
+      "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+      "required": false,
+      "type": "string"
+    },
+    "_profileParam": {
+      "name": "_profile",
+      "in": "query",
+      "description": "Select resources based on a given HL7 profile.",
+      "required": false,
+      "type": "string"
+    },
+    "idParam": {
+      "name": "id",
+      "in": "path",
+      "description": "Fetch a resource using its logical `id`.",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "x-wso2-oh-fhir-profile": [
+    "http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Inpatient-Institutional",
+    "http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Outpatient-Institutional",
+    "http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Pharmacy",
+    "http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-ExplanationOfBenefit-Professional-NonClinician"
+  ],
+  "x-wso2-oh-fhir-resourceType": "ExplanationOfBenefit"
+}

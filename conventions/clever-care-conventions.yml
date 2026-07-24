@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: derived
+source: openapi (13 FHIR resource APIs) + FHIR R4 base specification
+media_type: application/fhir+json
+authentication:
+  style: SMART on FHIR (OAuth 2.0 / OpenID Connect) for secured resources; registered developer app for public resources
+  ref: authentication/clever-care-authentication.yml
+pagination:
+  style: fhir-bundle
+  params: [_count, _offset]
+  response: searchset Bundle with link[] relations (self, next, previous) and total
+  note: Provider Directory resources expose _offset/_count; results wrapped in a FHIR searchset Bundle.
+search:
+  style: fhir-rest-search
+  common_params: [_id, _lastUpdated, _profile]
+  resource_params:
+    ExplanationOfBenefit: [identifier, patient, type, service-date]
+    Coverage: [patient, beneficiary]
+    Organization: [address, name, type, endpoint, coverage-area]
+  note: HL7 FHIR REST search grammar; date parameters support search prefixes (eq, gt, lt, ge, le).
+versioning:
+  style: uri-path
+  current: v1.0.0
+  ref: lifecycle/clever-care-lifecycle.yml
+idempotency:
+  supported: false
+  note: >-
+    The published surface is read-only (FHIR GET search + read). No write
+    operations and therefore no Idempotency-Key contract. Prior Authorization,
+    Provider Access, and Payer-to-Payer APIs (write-capable) are planned for
+    2027-01-01 and may introduce one.
+error_envelope:
+  format: fhir-operationoutcome
+  ref: errors/clever-care-problem-types.yml
+rate_limiting:
+  applies_to: Public Provider Directory + Drug Formulary resources
+  note: Public resources are advertised as rate-limited via the WSO2 gateway; exact quotas require a registered developer application.
+security_ref: security/clever-care-domain-security.yml

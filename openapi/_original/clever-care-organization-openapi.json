@@ -1,0 +1,229 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "HL7 FHIR API for Organization resource.\nSupported profiles: \n[http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization, \nhttp://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Organization, \nhttp://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network]\n",
+    "version": "1.0.0",
+    "title": "Organization"
+  },
+  "host": "fhir.clevercarehealthplan.com",
+  "basePath": "/r4/Organization/1.0.0",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "default": []
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "Search for Organization resources.",
+        "description": "Search for Organization resources. Since this API supports multiple HL7 profiles, if you do not provide a value for `_profile` a default value of `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization` will be used.",
+        "operationId": "searchOrganization",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "Select organizations with the specified address (matches any\nof the string elements of an address). Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Select Organizations with the specified name. Supported profiles\n- [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "A code for the type of organization (Select Organizations of the specified type). \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "endpoint",
+            "in": "query",
+            "description": "Technical endpoints providing access to services operated for\nthe organization (Select Organizations with the specified endpoint). \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "coverage-area",
+            "in": "query",
+            "description": "Select health insurance provider networks available in a region\ndescribed by the specified location. Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network]\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_offset",
+            "in": "query",
+            "description": "Pagination offset (Default: 0)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_count",
+            "in": "query",
+            "description": "Resource count (total) per bundle (Default: 10)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_profile",
+            "in": "query",
+            "description": "Select resources based on a given HL7 profile.\ndefault value: `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization`\n",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "Select resource based on the logical `id`.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search operation is successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-throttling-tier": "300PerMin",
+        "x-auth-type": "None"
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "Read an Organization resource",
+        "operationId": "readOrganization",
+        "produces": [
+          "application/fhir+json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Fetch a resource using its logical `id`.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read operation successful"
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "401": {
+            "description": "Unauthorized request"
+          },
+          "403": {
+            "description": "Access forbidden - `ID` mismatch"
+          },
+          "404": {
+            "description": "Requested resource not found - invalid `ID`"
+          },
+          "500": {
+            "description": "Internal server error - please contact the API provider"
+          },
+          "503": {
+            "description": "Service unavailable - please contact the API provider"
+          }
+        },
+        "security": [
+          {
+            "default": []
+          }
+        ],
+        "x-throttling-tier": "500PerMin",
+        "x-auth-type": "None"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "default": {
+      "type": "oauth2",
+      "authorizationUrl": "https://fhir.clevercarehealthplan.com/authorize",
+      "flow": "implicit",
+      "scopes": {}
+    }
+  },
+  "parameters": {
+    "_idParam": {
+      "name": "_id",
+      "in": "query",
+      "description": "Select resource based on the logical `id`.",
+      "required": false,
+      "type": "string"
+    },
+    "_lastUpdatedParam": {
+      "name": "_lastUpdated",
+      "in": "query",
+      "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n",
+      "required": false,
+      "type": "string"
+    },
+    "_profileParam": {
+      "name": "_profile",
+      "in": "query",
+      "description": "Select resources based on a given HL7 profile.\ndefault value: `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization`\n",
+      "required": false,
+      "type": "string"
+    },
+    "idParam": {
+      "name": "id",
+      "in": "path",
+      "description": "Fetch a resource using its logical `id`.",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "x-wso2-oh-fhir-profile": [
+    "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization",
+    "http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network",
+    "http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Organization"
+  ],
+  "x-wso2-oh-fhir-resourceType": "Organization",
+  "x-wso2-disable-security": true
+}

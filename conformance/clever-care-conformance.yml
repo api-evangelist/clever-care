@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://fhir.clevercarehealthplan.com/r4/metadata
+capability_statement: conformance/clever-care-capabilitystatement.json
+standards:
+- id: hl7-fhir-r4
+  conforms: true
+  evidence: CapabilityStatement fhirVersion 4.0.1; all resources served under /r4
+- id: smart-app-launch
+  conforms: true
+  evidence: published /r4/.well-known/smart-configuration with launch-standalone + context-standalone-patient capabilities
+- id: oauth2
+  conforms: true
+  evidence: SMART OAuth 2.0 authorization_code + client_credentials
+- id: oidc
+  conforms: true
+  evidence: sso-openid-connect capability; openid scope supported
+- id: pkce
+  conforms: true
+  evidence: code_challenge_methods_supported S256
+- id: carin-bb
+  conforms: true
+  evidence: Patient/ExplanationOfBenefit/Coverage constrained to CARIN Blue Button (C4BB) profiles
+- id: davinci-pdex-plan-net
+  conforms: true
+  evidence: Organization/Practitioner/PractitionerRole/Location/HealthcareService/InsurancePlan/Endpoint/OrganizationAffiliation constrained to Da Vinci PDex Plan-Net profiles
+- id: davinci-drug-formulary
+  conforms: true
+  evidence: MedicationKnowledge/List constrained to Da Vinci US Drug Formulary profiles
+- id: us-core
+  conforms: true
+  evidence: CARIN BB and PDex Plan-Net build on US Core R4 base profiles
+- id: cms-9115-f
+  conforms: true
+  evidence: Patient Access + Provider Directory APIs implemented per CMS Interoperability and Patient Access final rule (CMS-9115-F)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: FHIR uses OperationOutcome for errors, not application/problem+json
+regulatory:
+  program: CMS Interoperability and Patient Access (CMS-9115-F)
+  roadmap:
+    "2027-01-01":
+    - Prior authorization details (non-drug) added to Patient Access API
+    - Provider Access API goes live
+    - Payer-to-Payer API goes live
+    - Prior Authorization API goes live (CMS-0057-F)

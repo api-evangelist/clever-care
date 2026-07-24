@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: https://clevercarehealthplan.com/interoperability-and-patient-access/
+versioning:
+  scheme: uri-path
+  current: v1.0.0
+  fhir_version: 4.0.1 (R4)
+  pattern: https://fhir.clevercarehealthplan.com/r4/{Resource}/{version}
+  default_version_url: https://fhir.clevercarehealthplan.com/r4/{Resource}
+  docs: https://clevercarehealthplan.com/fhir-api-developer-resources/
+regulatory_program: CMS Interoperability and Patient Access (CMS-9115-F)
+roadmap:
+  url: https://clevercarehealthplan.com/interoperability-and-patient-access/
+  planned:
+    "2027-01-01":
+    - Prior authorization details (non-drug) added to Patient Access API
+    - Provider Access API goes live
+    - Payer-to-Payer API goes live
+    - Prior Authorization API goes live
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation/Sunset policy found; all 13 resource APIs are at v1.0.0 and PUBLISHED.
+status_page: null
+deprecated_operations: []

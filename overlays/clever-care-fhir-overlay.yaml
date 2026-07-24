@@ -1,0 +1,28 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Clever Care FHIR APIs
+  version: 1.0.0
+extends: openapi/clever-care-patient-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: clever-care
+    x-fhir-version: 4.0.1
+    x-implementation-guides:
+    - CARIN Blue Button (C4BB)
+    - Da Vinci PDex Plan-Net
+    - Da Vinci US Drug Formulary
+    x-regulatory: CMS Interoperability and Patient Access (CMS-9115-F)
+    x-access-tier: secured (SMART on FHIR patient context)
+- target: $.info
+  update:
+    x-agentic-access: agentic-access/clever-care-agentic-access.yml
+    x-conventions: conventions/clever-care-conventions.yml
+    x-error-catalog: errors/clever-care-problem-types.yml
+    x-authentication: authentication/clever-care-authentication.yml
+notes: >-
+  Overlay captures API Evangelist enrichment metadata common to all 13 Clever
+  Care FHIR R4 resource specs (Patient shown as the representative extends
+  target). It documents FHIR version, implementation guides, regulatory
+  program, and cross-links to derived artifacts. The original WSO2-published
+  specs are never mutated.

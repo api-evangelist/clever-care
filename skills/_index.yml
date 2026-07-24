@@ -1,0 +1,11 @@
+generated: '2026-07-18'
+method: generated
+skills:
+- file: clever-care-member-claims.md
+  name: Retrieve a Clever Care member's claims and coverage
+  api: openapi/clever-care-patient-openapi.json
+  operations: [Patient search, Coverage search, ExplanationOfBenefit search]
+- file: clever-care-provider-directory.md
+  name: Search the Clever Care provider directory
+  api: openapi/clever-care-organization-openapi.json
+  operations: [Organization search, PractitionerRole search, Practitioner read, Location read]
