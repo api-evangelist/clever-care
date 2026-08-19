@@ -1,0 +1,969 @@
+{
+  "item": [
+    {
+      "id": "98e47d80-5ef6-42d0-accb-53dd9a8ad3b3",
+      "name": "MedicationKnowledge",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0df54e05-cef1-4e80-b49b-bddd40889b42",
+          "name": "Search for MedicationKnowledge resources",
+          "request": {
+            "name": "Search for MedicationKnowledge resources",
+            "description": {},
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "DrugPlan",
+                  "value": "<string>",
+                  "description": "Select resources based on the `DrugPlan ID` of a `FormularyDrug`"
+                },
+                {
+                  "disabled": false,
+                  "key": "DrugTier",
+                  "value": "<string>",
+                  "description": "Select resources based on the `DrugTier ID` of a `FormularyDrug`"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "Select resources based on the `code` of a `FormularyDrug`"
+                },
+                {
+                  "disabled": false,
+                  "key": "DrugName",
+                  "value": "<string>",
+                  "description": "Select resources based on the `Descriptive Name` of a `FormularyDrug`"
+                },
+                {
+                  "disabled": false,
+                  "key": "_offset",
+                  "value": "<string>",
+                  "description": "Pagination offset (Default: 0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_count",
+                  "value": "<string>",
+                  "description": "Resource count (total) per bundle (Default: 10)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_profile",
+                  "value": "<string>",
+                  "description": "Select resources based on a given HL7 profile."
+                },
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>",
+                  "description": "Select resource based on the logical `id`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_lastUpdated",
+                  "value": "<string>",
+                  "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "authUrl",
+                  "value": "https://fhir.clevercarehealthplan.com/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "implicit"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8e5ace4f-f1f8-474c-ad8a-6b1c9a96f9eb",
+              "name": "Search operation is successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DrugPlan",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugTier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d60cb0ec-72d2-4c9d-aabd-a8379ba82976",
+              "name": "Invalid parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DrugPlan",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugTier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65bedb0b-8099-45b3-a0cb-94570632fa63",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DrugPlan",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugTier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3505eb52-33f8-42be-a167-cf2569baf5a2",
+              "name": "Access forbidden - `ID` mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DrugPlan",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugTier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54f8bd8d-3f81-4e08-a0cf-e52f3df5bf19",
+              "name": "Internal server error - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DrugPlan",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugTier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "946e1fa3-5c82-47f3-a24e-1b9bd14f33b4",
+              "name": "Service unavailable - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DrugPlan",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugTier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "DrugName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6f23f9f-b93f-40c3-89f1-5bb4ed3cb2f6",
+          "name": "Read a MedicationKnowledge resource",
+          "request": {
+            "name": "Read a MedicationKnowledge resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Fetch a resource using its logical `id`."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "authUrl",
+                  "value": "https://fhir.clevercarehealthplan.com/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "implicit"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "28295136-cf43-429c-ba99-8a0a5c28eea1",
+              "name": "Read operation successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7240fc26-5f8a-4273-b8fc-0444affa0157",
+              "name": "Invalid parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "884778ab-940c-46d1-aabd-28d47acf9d7c",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "adcc1f16-facb-45c4-9ef1-400fb367bfaf",
+              "name": "Access forbidden - `ID` mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ea0cbe8a-6602-43e6-968d-3f93012ae745",
+              "name": "Requested resource not found - invalid `ID`",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8d32110-92bd-4222-a4c0-8caca3d500b9",
+              "name": "Internal server error - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "993a88d7-1c3a-4504-af29-e4a826cde619",
+              "name": "Service unavailable - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://fhir.clevercarehealthplan.com/r4/Coverage/1.0.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "authUrl",
+        "value": "https://fhir.clevercarehealthplan.com/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5062dd89-ac4b-48a5-ad55-54e3e44f5429",
+    "name": "Coverage MedicationKnowledge API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]",
+      "type": "text/plain"
+    }
+  }
+}

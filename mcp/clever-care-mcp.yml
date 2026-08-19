@@ -2,11 +2,9 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: openapi (13 FHIR resource APIs)
-note: >-
-  No official Clever Care MCP server found. Candidate tool list derived from the
-  published FHIR R4 read/search operations. Secured tools (Patient, EOB, Coverage)
-  require a SMART on FHIR patient-context token; directory/formulary tools use a
-  registered developer app.
+note: No official Clever Care MCP server found. Candidate tool list derived from the published FHIR R4
+  read/search operations. Secured tools (Patient, EOB, Coverage) require a SMART on FHIR patient-context
+  token; directory/formulary tools use a registered developer app.
 server:
   name: clever-care-fhir
   transport: http
@@ -47,3 +45,9 @@ tools:
 - name: search_list
   description: Search Drug Formulary List / CoveragePlan (public formulary).
   source_operation: openapi/clever-care-list-openapi.json#get /
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census

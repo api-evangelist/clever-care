@@ -1,0 +1,1089 @@
+{
+  "item": [
+    {
+      "id": "71fd3a3a-75fd-4a7b-9a12-a0409da67e98",
+      "name": "OrganizationAffiliation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "de72db17-f0cf-4ebf-af69-7d0e586e2d6a",
+          "name": "Search for OrganizationAffiliation resources",
+          "request": {
+            "name": "Search for OrganizationAffiliation resources",
+            "description": {},
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "Definition of the role the `participatingOrganization` plays (Select OrganizationAffiliations with the specified role)"
+                },
+                {
+                  "disabled": false,
+                  "key": "specialty",
+                  "value": "<string>",
+                  "description": "Specific specialty of the `participatingOrganization` in the context of the role (Select OrganizationAffiliations associated with the specified specialty)"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "The location(s) at which the role occurs (Select OrganizationAffiliations available at the specified location)"
+                },
+                {
+                  "disabled": false,
+                  "key": "network",
+                  "value": "<string>",
+                  "description": "Health insurance provider network in which the `participatingOrganization`\nprovides the role's services (if defined) at the indicated locations (if\ndefined) (Select roles where the organization is a member of the specified\nhealth insurance provider network)\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "participating-organization",
+                  "value": "<string>",
+                  "description": "The organization that provides services to the primary organization (Select roles filled by the specified organization)"
+                },
+                {
+                  "disabled": false,
+                  "key": "primary-organization",
+                  "value": "<string>",
+                  "description": "The organization that receives the services from the `participating organization` (Select roles offered by the specified organization)"
+                },
+                {
+                  "disabled": false,
+                  "key": "endpoint",
+                  "value": "<string>",
+                  "description": "Technical endpoints providing access to services operated for this role (Select OrganizationAffiliations with the specified endpoint)"
+                },
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "Healthcare services provided through the role (Select OrganizationAffiliations providing the specified service)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_offset",
+                  "value": "<string>",
+                  "description": "Pagination offset (Default: 0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_count",
+                  "value": "<string>",
+                  "description": "Resource count (total) per bundle (Default: 10)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_profile",
+                  "value": "<string>",
+                  "description": "Select resources based on a given HL7 profile."
+                },
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>",
+                  "description": "Select resource based on the logical `id`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_lastUpdated",
+                  "value": "<string>",
+                  "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "authUrl",
+                  "value": "https://fhir.clevercarehealthplan.com/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "implicit"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6f03aef3-829d-4162-a46f-a5524d861666",
+              "name": "Search operation is successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "specialty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "participating-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primary-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "36476341-1584-4130-b350-1d62e54f45f7",
+              "name": "Invalid parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "specialty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "participating-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primary-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "62b7ce8d-bd52-4f15-a2f0-c04b642ebf20",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "specialty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "participating-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primary-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ce3edbc3-501e-41d1-8686-485816b7e8eb",
+              "name": "Access forbidden - `ID` mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "specialty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "participating-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primary-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9b5f98e0-bf12-4c36-8312-ef88c45736c1",
+              "name": "Internal server error - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "specialty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "participating-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primary-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d988166-cc74-4008-acca-ab8d97a4fbb0",
+              "name": "Service unavailable - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "specialty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "participating-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primary-organization",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "endpoint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afb4b9ea-d8e9-4754-bc96-0bc8c695b1a7",
+          "name": "Read an OrganizationAffiliation resource",
+          "request": {
+            "name": "Read an OrganizationAffiliation resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Fetch a resource using its logical `id`."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "authUrl",
+                  "value": "https://fhir.clevercarehealthplan.com/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "implicit"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1b2df73c-0802-487f-a1be-3a1c7d5a466e",
+              "name": "Read operation successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "648b5818-66ff-4de1-b0a6-4c5db8185839",
+              "name": "Invalid parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9727b9e1-ffef-43d6-a6e6-5d69c09724b3",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9f838dd-6032-4ecb-8117-852a0242d6c0",
+              "name": "Access forbidden - `ID` mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dbb070d2-3390-43ea-b88a-590015ba9671",
+              "name": "Requested resource not found - invalid `ID`",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "246ce838-4f90-4322-8b41-4ca0d39f67c8",
+              "name": "Internal server error - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "00983632-b644-43ed-b2cd-e326b9f45395",
+              "name": "Service unavailable - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://fhir.clevercarehealthplan.com/r4/Coverage/1.0.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "authUrl",
+        "value": "https://fhir.clevercarehealthplan.com/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "56346362-2678-4f43-9a27-2c43a444b487",
+    "name": "Coverage OrganizationAffiliation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]",
+      "type": "text/plain"
+    }
+  }
+}

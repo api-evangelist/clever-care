@@ -1,0 +1,942 @@
+{
+  "item": [
+    {
+      "id": "ab16c107-5561-4f25-9a8d-de2a6cf56518",
+      "name": "Practitioner",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6ec0807a-a4e7-477a-b938-24feb496ee66",
+          "name": "Search for Practitioner resources",
+          "request": {
+            "name": "Search for Practitioner resources",
+            "description": {
+              "content": "Search for Practitioner resources. Since this API supports multiple HL7 profiles, if you do not provide a value for `_profile` a default value of `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner` will be used.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "A server defined search that may match any of the string fields\nin the `HumanName`, including `family`, `give`, `prefix`, `suffix`, and/or\n`text` (Select Practitioners with the specified name (matches against any\nof the elements in the HumanName data type)). \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner]\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "given",
+                  "value": "<string>",
+                  "description": "A portion of the given name (Select Practitioners with the specified given name). Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner]"
+                },
+                {
+                  "disabled": false,
+                  "key": "family",
+                  "value": "<string>",
+                  "description": "A portion of the family name (Select Practitioners with the specified family name). Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner]"
+                },
+                {
+                  "disabled": false,
+                  "key": "_offset",
+                  "value": "<string>",
+                  "description": "Pagination offset (Default: 0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_count",
+                  "value": "<string>",
+                  "description": "Resource count (total) per bundle (Default: 10)"
+                },
+                {
+                  "disabled": false,
+                  "key": "_profile",
+                  "value": "<string>",
+                  "description": "Select resources based on a given HL7 profile.\ndefault value: `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Practitioner`\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>",
+                  "description": "Select resource based on the logical `id`."
+                },
+                {
+                  "disabled": false,
+                  "key": "_lastUpdated",
+                  "value": "<string>",
+                  "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "authUrl",
+                  "value": "https://fhir.clevercarehealthplan.com/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "implicit"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c5e4815e-47fd-4f44-ab62-e7401da7a00a",
+              "name": "Search operation is successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "given",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "family",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ef1f915-9195-42da-ba2f-8ae6230a4c4e",
+              "name": "Invalid parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "given",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "family",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e68e334-7b71-494f-8f9e-cbcc3be078e3",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "given",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "family",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6f9c6c32-9837-4303-b3bf-ce392751ef0e",
+              "name": "Access forbidden - `ID` mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "given",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "family",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d9185cc-46fb-4147-8c77-eca002c369a1",
+              "name": "Internal server error - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "given",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "family",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b7896be7-a94b-4c6f-b920-91ec6dcd6faf",
+              "name": "Service unavailable - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "given",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "family",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_lastUpdated",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cac2c33d-394c-4f8f-a0d8-8da0bb064a7c",
+          "name": "Read a Practitioner resource",
+          "request": {
+            "name": "Read a Practitioner resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Fetch a resource using its logical `id`."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "authUrl",
+                  "value": "https://fhir.clevercarehealthplan.com/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "implicit"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a2e3a456-cd34-43b6-a015-f56c0c00b8b7",
+              "name": "Read operation successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ef43c33a-d7d5-4033-869d-1de9e507bd6a",
+              "name": "Invalid parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bc0fa47f-4384-40d7-bff1-63d65b7e50d3",
+              "name": "Unauthorized request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4b05cefa-b01b-42ea-b4df-77afa7b1c09c",
+              "name": "Access forbidden - `ID` mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aa52feb1-4f0b-4f44-90bf-449fbca1250c",
+              "name": "Requested resource not found - invalid `ID`",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21f7ff96-0820-4a90-8f2d-bcab989c0a1b",
+              "name": "Internal server error - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a85c79a-1f50-4943-864c-541aab35908a",
+              "name": "Service unavailable - please contact the API provider",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Fetch a resource using its logical `id`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://fhir.clevercarehealthplan.com/r4/Coverage/1.0.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "authUrl",
+        "value": "https://fhir.clevercarehealthplan.com/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e4056db6-6be7-4586-8148-a6e2dc1fbaea",
+    "name": "Coverage Practitioner API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HL7 FHIR API for Coverage resource. Supported profiles - [http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage]",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coverage PractitionerRole API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PractitionerRole",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for PractitionerRole resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/",
+            "params": [
+              {
+                "name": "specialty",
+                "value": "",
+                "type": "query",
+                "description": "The practitioner has this specialty at an organization (Select PractitionerRoles associated with the specified specialty)"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "The practitioner can perform this role at for the organization (Select PractitionerRoles with the specified role)"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "One of the locations at which this practitioner provides care (Select PractitionerRoles available at the specified location)"
+              },
+              {
+                "name": "organization",
+                "value": "",
+                "type": "query",
+                "description": "The identity of the organization the practitioner represents / acts on behalf of (Select PractitionerRoles available at the specified organization)"
+              },
+              {
+                "name": "endpoint",
+                "value": "",
+                "type": "query",
+                "description": "Technical endpoints providing access to services operated for the practitioner with this role (Select PractitionerRoles with the specified endpoint)"
+              },
+              {
+                "name": "service",
+                "value": "",
+                "type": "query",
+                "description": "The healthcare service that this worker provides for this role's Organization/Location(s) (Select PractitionerRoles providing the specified service)"
+              },
+              {
+                "name": "practitioner",
+                "value": "",
+                "type": "query",
+                "description": "Practitioner that is able to provide the defined services for the organization (Select roles filled by the specified practitioner)"
+              },
+              {
+                "name": "network",
+                "value": "",
+                "type": "query",
+                "description": "Select roles where the practitioner is a member of the specified health insurance provider network"
+              },
+              {
+                "name": "_offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (Default: 0)"
+              },
+              {
+                "name": "_count",
+                "value": "",
+                "type": "query",
+                "description": "Resource count (total) per bundle (Default: 10)"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on a given HL7 profile."
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "Select resource based on the logical `id`."
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+              }
+            ]
+          },
+          "docs": "Search for PractitionerRole resources"
+        },
+        {
+          "info": {
+            "name": "Read a PractitionerRole resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Fetch a resource using its logical `id`."
+              }
+            ]
+          },
+          "docs": "Read a PractitionerRole resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

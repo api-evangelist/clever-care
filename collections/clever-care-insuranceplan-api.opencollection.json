@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coverage InsurancePlan API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "InsurancePlan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for InsurancePlan resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Select products with the specified name"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Select insurance plans of the specified type"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "Select products with the specified identifier"
+              },
+              {
+                "name": "owned-by",
+                "value": "",
+                "type": "query",
+                "description": "Select products that are owned by the specified organization"
+              },
+              {
+                "name": "administered-by",
+                "value": "",
+                "type": "query",
+                "description": "Product administrator (Select products that are administered by the specified organization)"
+              },
+              {
+                "name": "plan-type",
+                "value": "",
+                "type": "query",
+                "description": "Select plans of the specified type"
+              },
+              {
+                "name": "coverage-area",
+                "value": "",
+                "type": "query",
+                "description": "Select products that are offered in the specified location"
+              },
+              {
+                "name": "_offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (Default: 0)"
+              },
+              {
+                "name": "_count",
+                "value": "",
+                "type": "query",
+                "description": "Resource count (total) per bundle (Default: 10)"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on a given HL7 profile."
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "Select resource based on the logical `id`."
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+              }
+            ]
+          },
+          "docs": "Search for InsurancePlan resources"
+        },
+        {
+          "info": {
+            "name": "Read an InsurancePlan resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Fetch a resource using its logical `id`."
+              }
+            ]
+          },
+          "docs": "Read an InsurancePlan resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

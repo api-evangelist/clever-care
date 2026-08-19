@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coverage HealthcareService API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "HealthcareService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for HealthcareService resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Select HealthcareServices with the specified name"
+              },
+              {
+                "name": "service-category",
+                "value": "",
+                "type": "query",
+                "description": "Select HealthcareServices providing the specified category of services"
+              },
+              {
+                "name": "service-type",
+                "value": "",
+                "type": "query",
+                "description": "Select HealthcareServices of the specified type (The type of service provided by this healthcare service)"
+              },
+              {
+                "name": "specialty",
+                "value": "",
+                "type": "query",
+                "description": "Select services associated with the specified specialty (The specialty of the service provided by this healthcare service)"
+              },
+              {
+                "name": "organization",
+                "value": "",
+                "type": "query",
+                "description": "Select HealthcareServices provided by the specified organization (The organization that provides this Healthcare Service)"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "Select HealthcareServices available at the specified location (The location of the Healthcare Service)"
+              },
+              {
+                "name": "endpoint",
+                "value": "",
+                "type": "query",
+                "description": "Select HealthcareServices with the specified endpoint (Technical endpoints providing access to electronic services operated for the healthcare service)"
+              },
+              {
+                "name": "coverage-area",
+                "value": "",
+                "type": "query",
+                "description": "Select services available in a region described by the specified location. (Location(s) service is intended for/available to)"
+              },
+              {
+                "name": "_offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (Default: 0)"
+              },
+              {
+                "name": "_count",
+                "value": "",
+                "type": "query",
+                "description": "Resource count (total) per bundle (Default: 10)"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on a given HL7 profile."
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "Select resource based on the logical `id`."
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+              }
+            ]
+          },
+          "docs": "Search for HealthcareService resources"
+        },
+        {
+          "info": {
+            "name": "Read a HealthcareService resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Fetch a resource using its logical `id`."
+              }
+            ]
+          },
+          "docs": "Read a HealthcareService resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

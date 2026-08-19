@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Coverage Organization API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for Organization resources.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "Select organizations with the specified address (matches any\nof the string elements of an address). Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Select Organizations with the specified name. Supported profiles\n- [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "A code for the type of organization (Select Organizations of the specified type). \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n"
+              },
+              {
+                "name": "endpoint",
+                "value": "",
+                "type": "query",
+                "description": "Technical endpoints providing access to services operated for\nthe organization (Select Organizations with the specified endpoint). \nSupported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization]\n"
+              },
+              {
+                "name": "coverage-area",
+                "value": "",
+                "type": "query",
+                "description": "Select health insurance provider networks available in a region\ndescribed by the specified location. Supported profiles - [http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Network]\n"
+              },
+              {
+                "name": "_offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (Default: 0)"
+              },
+              {
+                "name": "_count",
+                "value": "",
+                "type": "query",
+                "description": "Resource count (total) per bundle (Default: 10)"
+              },
+              {
+                "name": "_profile",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on a given HL7 profile.\ndefault value: `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization`\n"
+              },
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query",
+                "description": "Select resource based on the logical `id`."
+              },
+              {
+                "name": "_lastUpdated",
+                "value": "",
+                "type": "query",
+                "description": "Select resources based on the last time they were changed.\n\n- Only date is supported in `yyyy-mm-dd` format.\n- Prefixes supported are `eq`, `ne`, `gt`, `lt`, `ge` and `le`. Refer to their definitions at http://hl7.org/fhir/search.html#prefix.\n\neg: `_lastUpdated=eq2021-01-14`\n"
+              }
+            ]
+          },
+          "docs": "Search for Organization resources. Since this API supports multiple HL7 profiles, if you do not provide a value for `_profile` a default value of `http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization` will be used."
+        },
+        {
+          "info": {
+            "name": "Read an Organization resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Fetch a resource using its logical `id`."
+              }
+            ]
+          },
+          "docs": "Read an Organization resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
