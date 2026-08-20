@@ -85,7 +85,8 @@ apis:
   description: The Endpoint API from Clever Care — 2 operation(s) for endpoint.
   humanURL: https://fhir-portal.clevercarehealthplan.com/api-docs/Coverage.html
   baseURL: https://fhir.clevercarehealthplan.com/r4/Coverage
-  tags:
+  tags: []
+  tags_raw:
   - Endpoint
   properties:
   - type: OpenAPI
